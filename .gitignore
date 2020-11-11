@@ -1,0 +1,10 @@
+.vscode
+*.o
+
+build
+bin
+
+# tests
+tests/*.o
+tests/*_test
+tests/error_log.txt
