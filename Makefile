@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -Wall -Wextra -pedantic -Isrc -std=c11 -DNDEBUG
+CFLAGS = -g -O1 -Wall -Wextra -pedantic -Isrc -std=c11
 LDLIBS = 
 
 BUILD_DIR ?= ./build
@@ -21,6 +21,10 @@ $(TARGET): $(OBJECTS)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	$(CC) -c $^ -o $@ $(CFLAGS)
+
+.PHONY: release
+release: CFLAGS += -DNDEBUG
+release: all
 
 .PHONY: tests
 tests: $(TESTS)

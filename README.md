@@ -1,4 +1,5 @@
 # Spare
+Here I am trying out some different ways of comparing strings for equality and benchmarking those.
 
 ## Build
 `make`    
