@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -g -O1 -Wall -Wextra -pedantic -Isrc -std=c11
-LDLIBS = 
+CFLAGS = -g -O2 -Wall -Wextra -pedantic -Isrc -std=c11
+LDLIBS = -pthread
 
 BUILD_DIR ?= ./build
 SRC_DIR ?= ./src

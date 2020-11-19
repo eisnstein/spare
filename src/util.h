@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #ifdef NDEBUG
 #define debug_(M)
@@ -102,5 +103,7 @@
   do {                                                \
     throw_((A) == NULL, "Could not allocate memory"); \
   } while (0)
+
+double get_time_taken(struct timespec *start, struct timespec *end);
 
 #endif
