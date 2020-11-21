@@ -46,7 +46,7 @@ bool front_back_compare(char *str1, char *str2, off_t len) {
     backStr2--;
   }
 
-  return false;
+  return true;
 }
 
 void custom_cmp(const char *string1, const char *string2, off_t size) {
@@ -60,7 +60,7 @@ void custom_cmp(const char *string1, const char *string2, off_t size) {
     printf("n : ");
   }
   clock_gettime(0, &end);
-  printf("naive_compare: %f\n", get_time_taken(&start, &end));
+  printf("naive_compare: %.4f\n", get_time_taken(&start, &end));
 
   clock_gettime(0, &start);
   if (my_strcmp(string1, string2) == 0) {
@@ -69,7 +69,7 @@ void custom_cmp(const char *string1, const char *string2, off_t size) {
     printf("n : ");
   }
   clock_gettime(0, &end);
-  printf("my_strcmp: %f\n", get_time_taken(&start, &end));
+  printf("my_strcmp: %.4f\n", get_time_taken(&start, &end));
 
   clock_gettime(0, &start);
   if (front_back_compare(string1, string2, size) == true) {
@@ -78,7 +78,7 @@ void custom_cmp(const char *string1, const char *string2, off_t size) {
     printf("n : ");
   }
   clock_gettime(0, &end);
-  printf("front_back_compare: %f\n", get_time_taken(&start, &end));
+  printf("front_back_compare: %.4f\n", get_time_taken(&start, &end));
 
   // last item of string2 is different
   /*printf("---\n");
